@@ -21,6 +21,7 @@ const SkillCarousel = () => {
       centerMode={true}
       centerSlidePercentage={25}
       infiniteLoop={true}
+      showThumbs={false}
     >
       <div className="w-4 grid">
         <i className="text-6xl m-2 p-2">
