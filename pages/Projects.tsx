@@ -11,6 +11,8 @@ import {
 import { server } from "./index";
 
 import SkillCarousel from "../components/SkillCarousel";
+import { FaGithub, FaYoutube } from "react-icons/fa";
+import { FiLink } from "react-icons/fi";
 
 const Projects: NextPage = ({ projects }) => {
   return (
@@ -33,13 +35,31 @@ const Projects: NextPage = ({ projects }) => {
               name: string;
               description: string;
               stack: Array<string>;
+              github: string;
+              deployed: string;
+              demo: string;
             }) => (
               <div className="border-2 p-4 m-4 rounded-md">
                 <h3 className="text-2xl font-bold">{project.name}</h3>
+                <div className="flex">
+                  <a className="p-1 m-1" href={project.github}>
+                    <FaGithub />
+                  </a>
+                  {project.deployed ? (
+                    <a className="p-1 m-1" href={project.deployed}>
+                      <FiLink />
+                    </a>
+                  ) : null}
+                  {project.demo ? (
+                    <a className="p-1 m-1" href={project.demo}>
+                      <FaYoutube />
+                    </a>
+                  ) : null}
+                </div>
                 <p className="text-lg">
                   <em>{project.description}</em>
                 </p>
-                <ul className="flex">
+                <ul className="flex border-b-2">
                   {project.stack.map((item) => (
                     <li className="p-2"> - {item}</li>
                   ))}

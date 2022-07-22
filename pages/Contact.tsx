@@ -1,8 +1,35 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 
 const Contact: NextPage = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    const data = {
+      firstName,
+      lastName,
+      email,
+      message,
+    };
+    fetch("/api/contact", {
+      method: "post",
+      body: JSON.stringify(data),
+    }).then((res) => {
+      if (res.status === 200) {
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+      }
+    });
+  };
+
   return (
     <div className="space-y-14 lg:space-y-24">
       <Head>
@@ -13,7 +40,7 @@ const Contact: NextPage = () => {
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="grid place-content-center">
           <h1 className="font-bold text-2xl m-2"> Contact Me </h1>
-          <form className="w-full max-w-lg">
+          <form className="w-full max-w-lg" onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
@@ -27,6 +54,7 @@ const Contact: NextPage = () => {
                   id="grid-first-name"
                   type="text"
                   placeholder="Jane"
+                  onChange={(e) => setFirstName(e.target.value)}
                 ></input>
                 <p className="text-gray-600 text-xs italic dark:text-gray-300">
                   Please fill out this field.
@@ -44,6 +72,7 @@ const Contact: NextPage = () => {
                   id="grid-last-name"
                   type="text"
                   placeholder="Doe"
+                  onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </div>
             </div>
@@ -59,6 +88,7 @@ const Contact: NextPage = () => {
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="email"
                   type="email"
+                  onChange={(e) => setEmail(e.target.value)}
                 ></input>
                 <p className="text-gray-600 text-xs italic dark:text-gray-300">
                   Please double check you have entered the correct email
@@ -76,6 +106,7 @@ const Contact: NextPage = () => {
                 <textarea
                   className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                   id="message"
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
                 <p className="text-gray-600 text-xs italic dark:text-gray-300">
                   Re-size can be disabled by set by resize-none / resize-y /
@@ -87,7 +118,7 @@ const Contact: NextPage = () => {
               <div className="md:w-1/3">
                 <button
                   className="shadow bg-slate-300 hover:bg-slate-600 hover:text-white dark:hover:bg-slate-400 focus:shadow-outline focus:outline-none dark:text-black font-bold py-2 px-4 rounded"
-                  type="button"
+                  type="submit"
                 >
                   Send
                 </button>
