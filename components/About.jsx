@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import profile from "../public/profile.jpg";
 import { VscGithub } from "react-icons/vsc";
-import { FaDev, FaLinkedin } from "react-icons/fa";
+import { FaDev, FaLinkedin, FaTiktok } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -42,14 +42,29 @@ const About = () => {
             placeholder="blur"
           />
           <div className="flex lg:mg-12 lg:px-4 justify-between  ">
-            <a className="p-2 text-xl font-bold">
+            <a
+              className="p-2 text-xl font-bold"
+              href="https://www.linkedin.com/in/kade-esterline/"
+            >
               <FaLinkedin />
             </a>
-            <a className="p-2 text-xl font-bold">
+            <a
+              className="p-2 text-xl font-bold"
+              href="https://github.com/kadeesterline"
+            >
               <VscGithub />
             </a>
-            <a className="p-2 text-xl font-bold">
+            <a
+              className="p-2 text-xl font-bold"
+              href="https://dev.to/kadeesterline"
+            >
               <FaDev />
+            </a>
+            <a
+              className="p-2 text-xl font-bold"
+              href="https://www.tiktok.com/@kadecodes"
+            >
+              <FaTiktok />
             </a>
           </div>
         </div>
