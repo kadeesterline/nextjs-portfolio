@@ -39,7 +39,7 @@ const Blog: NextPage = ({ posts }) => {
                     </p>
                   </div>
                 </div>
-                <div className="">
+                <div className="flex items-center">
                   <a
                     className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md"
                     href={post.url}

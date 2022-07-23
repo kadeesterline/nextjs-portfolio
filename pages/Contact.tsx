@@ -15,7 +15,7 @@ const Contact: NextPage = () => {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      message: message,
+      message: `${message}`,
     };
     console.log(data);
     fetch("/api/contact", {

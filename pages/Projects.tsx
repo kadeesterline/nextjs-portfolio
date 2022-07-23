@@ -27,6 +27,19 @@ const Projects: NextPage = ({ projects }) => {
 
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
+          <h2 className="text-4xl font-bold"> Resume </h2>
+          <p className="p-2 m-2">
+            You can find my full resume{" "}
+            <a
+              href="https://drive.google.com/file/d/1xdWaXm6tMRbWmHdiuY5irmAyiAdSrS3G/view?usp=sharing"
+              className="text-blue-400 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-600"
+            >
+              here
+            </a>
+          </p>
+        </div>
+
+        <div className="m-5 p-5">
           <h2 className="text-4xl font-bold"> Skills </h2>
           <SkillCarousel />
         </div>
