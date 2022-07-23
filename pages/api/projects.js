@@ -8,7 +8,10 @@ const projects = [
     // deployed: "",
     // demo: "",
     stack: ["React", "Tailwind", "Ruby on Rails", "PostgreSQL", "AWS S3"],
-    images: [],
+    images: [
+      "/project-images/harmony-photos/home-screen.png",
+      "/project-images/harmony-photos/room-view.png",
+    ],
   },
   {
     id: 2,
@@ -19,7 +22,10 @@ const projects = [
     // deployed: "",
     // demo: "",
     stack: ["React", "Bootstrap", "Sinatra", "ActiveRecord", "SQLite"],
-    images: [],
+    images: [
+      "/project-images/hardpark-photos/home-page.png",
+      "/project-images/hardpark-photos/the-lot.png",
+    ],
   },
   {
     id: 3,
@@ -29,7 +35,10 @@ const projects = [
     deployed: "https://kanbanflatiron.herokuapp.com/",
     // demo: "",
     stack: ["React", "Tailwind", "Ruby on Rails", "PostgreSQL"],
-    images: [],
+    images: [
+      "/project-images/kanban-photos/board-view.png",
+      "/project-images/kanban-photos/home-view.png",
+    ],
   },
 ];
 

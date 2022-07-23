@@ -12,11 +12,12 @@ const Contact: NextPage = () => {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = {
-      firstName,
-      lastName,
-      email,
-      message,
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      message: message,
     };
+    console.log(data);
     fetch("/api/contact", {
       method: "post",
       body: JSON.stringify(data),

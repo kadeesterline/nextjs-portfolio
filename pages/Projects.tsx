@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import {
   useState,
   useEffect,
@@ -15,6 +16,8 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 
 const Projects: NextPage = ({ projects }) => {
+  console.log(projects[0].images);
+
   return (
     <div className="space-y-14 lg:space-y-24">
       <Head>
@@ -38,6 +41,7 @@ const Projects: NextPage = ({ projects }) => {
               github: string;
               deployed: string;
               demo: string;
+              images: Array<string>;
             }) => (
               <div className="border-2 p-4 m-4 rounded-md">
                 <h3 className="text-2xl font-bold">{project.name}</h3>
@@ -64,6 +68,11 @@ const Projects: NextPage = ({ projects }) => {
                     <li className="p-2"> - {item}</li>
                   ))}
                 </ul>
+                <div className="flex justify-evenly p-3">
+                  {project.images.map((image) => (
+                    <Image src={image} width="325" height="200" />
+                  ))}
+                </div>
               </div>
             )
           )}
