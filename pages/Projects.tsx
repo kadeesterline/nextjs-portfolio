@@ -43,6 +43,8 @@ const Projects = ({
             <a
               href="https://drive.google.com/file/d/1xdWaXm6tMRbWmHdiuY5irmAyiAdSrS3G/view?usp=sharing"
               className="text-blue-400 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-600"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               here
             </a>
