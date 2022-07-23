@@ -17,13 +17,13 @@ import { AiOutlineConsoleSql } from "react-icons/ai";
 const SkillCarousel = () => {
   return (
     <Carousel
-      className="m-2 p-2"
+      className="m-2 p-2 bg-slate-100 border-2 rounded-md dark:text-black"
       centerMode={true}
       centerSlidePercentage={25}
       infiniteLoop={true}
       showThumbs={false}
     >
-      <div className="w-4 grid">
+      <div className="w-4 grid bg-sl">
         <i className="text-6xl m-2 p-2">
           <AiOutlineConsoleSql />
         </i>

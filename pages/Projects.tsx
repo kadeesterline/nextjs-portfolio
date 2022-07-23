@@ -43,29 +43,43 @@ const Projects: NextPage = ({ projects }) => {
               demo: string;
               images: Array<string>;
             }) => (
-              <div className="border-2 p-4 m-4 rounded-md">
-                <h3 className="text-2xl font-bold">{project.name}</h3>
+              <div className="border-2 p-4 m-4 rounded-md bg-slate-100 dark:bg-slate-200">
+                <h3 className="text-2xl font-bold dark:text-black">
+                  {project.name}
+                </h3>
                 <div className="flex">
-                  <a className="p-1 m-1" href={project.github}>
+                  <a
+                    className="p-1 m-1 text-slate-500 dark:text-slate-700"
+                    href={project.github}
+                  >
                     <FaGithub />
                   </a>
                   {project.deployed ? (
-                    <a className="p-1 m-1" href={project.deployed}>
+                    <a
+                      className="p-1 m-1 text-slate-500 dark:text-slate-700"
+                      href={project.deployed}
+                    >
                       <FiLink />
                     </a>
                   ) : null}
                   {project.demo ? (
-                    <a className="p-1 m-1" href={project.demo}>
+                    <a
+                      className="p-1 m-1 text-slate-500 dark:text-slate-700"
+                      href={project.demo}
+                    >
                       <FaYoutube />
                     </a>
                   ) : null}
                 </div>
-                <p className="text-lg">
+                <p className="text-lg text-slate-500 dark:text-slate-600">
                   <em>{project.description}</em>
                 </p>
                 <ul className="flex border-b-2">
                   {project.stack.map((item) => (
-                    <li className="p-2"> - {item}</li>
+                    <li className="p-2 text-slate-500 dark:text-slate-400">
+                      {" "}
+                      - {item}
+                    </li>
                   ))}
                 </ul>
                 <div className="flex justify-evenly p-3">

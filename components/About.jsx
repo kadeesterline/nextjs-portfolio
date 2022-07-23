@@ -9,7 +9,7 @@ const About = () => {
     <div className="container px-4 mx-auto">
       <div className="lg:space-x-5 lg:flex lg:flex-row item-center lg:-mx-4 flex flex-col-reverse text-center rounded-lg lg:text-left bg-slate-200 dark:bg-slate-600">
         <div className="lg:px-4 lg:mt-12">
-          <h1 className="text-2xl font-bold text-gray-900 lg:text-5xl dark:text-white">
+          <h1 className="text-2xl font-bold text-gray-900 lg:text-5xl">
             Hey there, I'm Kade
           </h1>
           <div className="mt-6 text-gray-800 dark:text-white">

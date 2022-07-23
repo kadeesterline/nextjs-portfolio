@@ -22,9 +22,11 @@ const Blog: NextPage = ({ posts }) => {
               reading_time_minutes: number;
               published_at: string;
             }) => (
-              <div className="border-2 p-4 m-4 rounded-md flex justify-between">
+              <div className="border-2 p-4 m-4 rounded-md flex justify-between bg-slate-100 dark:bg-slate-200">
                 <div className="">
-                  <h3 className="text-2xl font-bold">{post.title}</h3>
+                  <h3 className="text-2xl font-bold dark:text-black">
+                    {post.title}
+                  </h3>
                   <p className="text-slate-500 dark:text-slate-400">
                     <em>{post.tags}</em>
                   </p>
