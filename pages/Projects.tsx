@@ -9,7 +9,7 @@ import {
   ReactFragment,
   ReactPortal,
 } from "react";
-import { server } from "./index";
+import { server } from "../config/index";
 
 import SkillCarousel from "../components/SkillCarousel";
 import { FaGithub, FaYoutube } from "react-icons/fa";
