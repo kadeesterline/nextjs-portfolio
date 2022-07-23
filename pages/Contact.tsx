@@ -109,10 +109,6 @@ const Contact: NextPage = () => {
                   id="message"
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
-                <p className="text-gray-600 text-xs italic dark:text-gray-300">
-                  Re-size can be disabled by set by resize-none / resize-y /
-                  resize-x / resize
-                </p>
               </div>
             </div>
             <div className="md:flex md:items-center">

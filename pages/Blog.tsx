@@ -1,8 +1,17 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import dayjs from "dayjs";
 
-const Blog: NextPage = ({ posts }) => {
+type Post = {
+  title: string;
+  url: string;
+  conver_image: string;
+  tags: string;
+  reading_time_minutes: number;
+  published_at: string;
+};
+
+const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="space-y-14 lg:space-y-24">
       <Head>
@@ -43,6 +52,8 @@ const Blog: NextPage = ({ posts }) => {
                   <a
                     className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md"
                     href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Read Article
                   </a>
@@ -58,7 +69,7 @@ const Blog: NextPage = ({ posts }) => {
 
 export default Blog;
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const res = await fetch("https://dev.to/api/articles?username=kadeesterline");
   const posts = await res.json();
 
@@ -67,4 +78,4 @@ export async function getStaticProps() {
       posts,
     },
   };
-}
+};

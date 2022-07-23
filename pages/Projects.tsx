@@ -1,4 +1,4 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
+import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import {
@@ -73,6 +73,8 @@ const Projects = ({
                   <a
                     className="p-1 m-1 text-slate-500 dark:text-slate-700"
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaGithub />
                   </a>
@@ -80,6 +82,8 @@ const Projects = ({
                     <a
                       className="p-1 m-1 text-slate-500 dark:text-slate-700"
                       href={project.deployed}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FiLink />
                     </a>
@@ -88,6 +92,8 @@ const Projects = ({
                     <a
                       className="p-1 m-1 text-slate-500 dark:text-slate-700"
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaYoutube />
                     </a>
