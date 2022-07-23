@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import {
@@ -15,9 +15,18 @@ import SkillCarousel from "../components/SkillCarousel";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 
-const Projects: NextPage = ({ projects }) => {
-  console.log(projects[0].images);
+type Project = {
+  name: string;
+  github: string;
+  demo: string;
+  deployed: string;
+  description: string;
+  images: Array<string>;
+};
 
+const Projects = ({
+  projects,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="space-y-14 lg:space-y-24">
       <Head>
@@ -109,7 +118,7 @@ const Projects: NextPage = ({ projects }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const res = await fetch(`${server}/api/projects`);
   const projects = await res.json();
 
@@ -118,6 +127,6 @@ export async function getStaticProps() {
       projects,
     },
   };
-}
+};
 
 export default Projects;
