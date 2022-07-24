@@ -3,6 +3,7 @@ import Head from "next/head";
 import dayjs from "dayjs";
 
 type Post = {
+  id: number;
   title: string;
   url: string;
   conver_image: string;
@@ -24,6 +25,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
           <h2 className="text-4xl font-bold pb-4"> Blog </h2>
           {posts.map(
             (post: {
+              id: number;
               title: string;
               url: string;
               cover_image: string;
@@ -51,7 +53,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="flex items-center">
                   <a
                     className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md"
-                    href={post.url}
+                    href={`/blog/${post.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
