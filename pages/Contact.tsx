@@ -40,7 +40,7 @@ const Contact: NextPage = () => {
 
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="grid place-content-center">
-          <h1 className="font-bold text-2xl m-2"> Contact Me </h1>
+          <h1 className="font-bold text-4xl m-2"> Contact Me </h1>
           <form className="w-full max-w-lg" onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
