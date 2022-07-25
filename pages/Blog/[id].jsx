@@ -4,6 +4,15 @@ import dayjs from "dayjs";
 // import { getStaticPaths, getStaticProps } from "next";
 import Markdown from "markdown-to-jsx";
 
+const Title = ({ children, ...props }) => <div {...props}>{children}</div>;
+const Subtitle = ({ children, ...props }) => <div {...props}>{children}</div>;
+const Paragraph = ({ children, ...props }) => <div {...props}>{children}</div>;
+
+const CodeBlock = ({ children, ...props }) => <div {...props}>{children}</div>;
+
+const Code = ({ children, ...props }) => <div {...props}>{children}</div>;
+const Link = ({ children, ...props }) => <div {...props}>{children}</div>;
+
 const Post = ({ post }) => {
   return (
     <div>
@@ -26,20 +35,48 @@ const Post = ({ post }) => {
               {dayjs(post.published_at).format("MM/DD/YYYY")}
             </p>
           </div>
-          <Markdown
-          // options={{
-          //   overrides: {
-          //     h2: {
-          //       component: Post,
-          //       props: {
-          //         className: "text-3xl font-bold pb-4",
-          //       },
-          //     },
-          //   },
-          // }}
-          >
-            {post.body_markdown}
-          </Markdown>
+          <div className="">
+            <Markdown
+              options={{
+                overrides: {
+                  h2: {
+                    component: Title,
+                    props: {
+                      className: "text-2xl font-bold p-2 m-2",
+                    },
+                  },
+                  h3: {
+                    component: Subtitle,
+                    props: {
+                      className: "text-xl font-bold p-2 m-2",
+                    },
+                  },
+                  p: {
+                    component: Paragraph,
+                    props: {
+                      className: "p-2 m-2",
+                    },
+                  },
+                  code: {
+                    component: Code,
+                    props: {
+                      className:
+                        "p-1 m-1 bg-slate-200 rounded-md dark:bg-slate-400 inline",
+                    },
+                  },
+                  a: {
+                    component: Link,
+                    props: {
+                      className:
+                        "p-1 m-1 text-blue-400 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-600 inline",
+                    },
+                  },
+                },
+              }}
+            >
+              {post.body_markdown}
+            </Markdown>
+          </div>
         </div>
       </main>
     </div>
