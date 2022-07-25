@@ -42,7 +42,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                   <p className="text-slate-500 dark:text-slate-400">
                     <em>{post.tags}</em>
                   </p>
-                  <div className="flex justify-betwen">
+                  <div className="flex justify-between">
                     <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
                       {post.reading_time_minutes} minute read
                     </p>

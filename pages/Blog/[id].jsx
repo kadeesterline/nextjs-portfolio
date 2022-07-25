@@ -1,8 +1,7 @@
-// import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import dayjs from "dayjs";
-// import { getStaticPaths, getStaticProps } from "next";
-import Markdown from "markdown-to-jsx";
+import ReactMarkdown from "react-markdown";
+import "github-markdown-css";
 
 const Title = ({ children, ...props }) => <div {...props}>{children}</div>;
 const Subtitle = ({ children, ...props }) => <div {...props}>{children}</div>;
@@ -24,7 +23,7 @@ const Post = ({ post }) => {
         <div className="m-5 p-5">
           <h1 className="text-4xl font-bold pb-4">{post.title}</h1>
 
-          <div className="flex justify-betwen">
+          <div className="flex justify-between">
             <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
               <em>{post.tag_list}</em>
             </p>
@@ -35,47 +34,8 @@ const Post = ({ post }) => {
               {dayjs(post.published_at).format("MM/DD/YYYY")}
             </p>
           </div>
-          <div className="">
-            <Markdown
-              options={{
-                overrides: {
-                  h2: {
-                    component: Title,
-                    props: {
-                      className: "text-2xl font-bold p-2 m-2",
-                    },
-                  },
-                  h3: {
-                    component: Subtitle,
-                    props: {
-                      className: "text-xl font-bold p-2 m-2",
-                    },
-                  },
-                  p: {
-                    component: Paragraph,
-                    props: {
-                      className: "p-2 m-2",
-                    },
-                  },
-                  code: {
-                    component: Code,
-                    props: {
-                      className:
-                        "p-1 m-1 bg-slate-200 rounded-md dark:bg-slate-400 inline",
-                    },
-                  },
-                  a: {
-                    component: Link,
-                    props: {
-                      className:
-                        "p-1 m-1 text-blue-400 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-600 inline",
-                    },
-                  },
-                },
-              }}
-            >
-              {post.body_markdown}
-            </Markdown>
+          <div className="markdown-body">
+            <ReactMarkdown>{post.body_markdown}</ReactMarkdown>
           </div>
         </div>
       </main>
