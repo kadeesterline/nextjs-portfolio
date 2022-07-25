@@ -3,13 +3,13 @@ import nodemailer from "nodemailer";
 export default function handler(req, res) {
   const body = JSON.parse(req.body);
 
-  const PASSWORD = process.env.password;
+  // const PASSWORD = process.env.password;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
       user: "kadeportfolio1@gmail.com",
-      pass: `${PASSWORD}`,
+      pass: `${process.env.PASSWORD}`,
     },
   });
 
