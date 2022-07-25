@@ -1,5 +1,6 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import dayjs from "dayjs";
 
 type Post = {
@@ -50,16 +51,11 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <a
-                    className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md"
-                    href={`/blog/${post.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <Link href={`/Blog/` + post.id} className="">
+                  <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md">
                     Read Article
                   </a>
-                </div>
+                </Link>
               </div>
             )
           )}
