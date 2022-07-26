@@ -1,29 +1,18 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import {
-  useState,
-  useEffect,
-  JSXElementConstructor,
-  ReactElement,
-  ReactFragment,
-  ReactPortal,
-} from "react";
-
-import { server } from "../config/index";
-
 import SkillCarousel from "../components/SkillCarousel";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 
-type Project = {
-  name: string;
-  github: string;
-  demo: string;
-  deployed: string;
-  description: string;
-  images: Array<string>;
-};
+// type Project = {
+//   name: string;
+//   github: string;
+//   demo: string;
+//   deployed: string;
+//   description: string;
+//   images: Array<string>;
+// };
 
 const Projects = ({
   projects,
@@ -35,7 +24,7 @@ const Projects = ({
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <main className="max-w-4xl mx-auto mt-16 antialiased">
+      <main className="max-w-4xl grid mt-16 antialiased">
         <div className="m-5 p-5">
           <h2 className="text-4xl font-bold"> Resume </h2>
           <p className="p-2 m-2">
@@ -51,7 +40,7 @@ const Projects = ({
           </p>
         </div>
 
-        <div className="m-5 p-5">
+        <div className="max-w-4xl m-5 p-5">
           <h2 className="text-4xl font-bold"> Skills </h2>
           <SkillCarousel />
         </div>
@@ -118,9 +107,6 @@ const Projects = ({
 };
 
 export const getStaticProps = async () => {
-  // const res = await fetch(`${server}/api/projects`);
-  // const projects = await res.json();
-
   const data = [
     {
       id: 1,
