@@ -60,12 +60,12 @@ const About = () => {
             >
               <FaDev />
             </a>
-            <a
+            {/* <a
               className="pt-2 mt-2 text-xl font-bold"
               href="https://www.tiktok.com/@kadecodes"
             >
               <FaTiktok />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
