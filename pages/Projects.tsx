@@ -26,7 +26,7 @@ const Projects = ({
 
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
-          <h2 className="text-4xl font-bold"> Resume </h2>
+          <h2 className="text-4xl font-bold pb-4"> Resume </h2>
           <p className="p-2 m-2">
             You can find my full resume{" "}
             <a
@@ -40,7 +40,7 @@ const Projects = ({
           </p>
         </div>
 
-        <div className="max-w-4xl m-5 p-5">
+        <div className="m-5 p-5">
           <h2 className="text-4xl font-bold"> Skills </h2>
           <SkillCarousel />
         </div>
@@ -85,11 +85,14 @@ const Projects = ({
               <p className="text-lg text-slate-500 dark:text-slate-600">
                 <em>{project.description}</em>
               </p>
-              <ul className="flex border-b-2">
+              <p className="text-lg text-slate-500 dark:text-slate-600">
+                {" "}
+                Tech Stack:{" "}
+              </p>
+              <ul className="grid border-b-2">
                 {project.stack.map((item) => (
                   <li className="p-2 text-slate-500 dark:text-slate-400">
-                    {" "}
-                    - {item}
+                    -{item}
                   </li>
                 ))}
               </ul>

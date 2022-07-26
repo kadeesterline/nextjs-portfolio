@@ -35,24 +35,22 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
               published_at: string;
             }) => (
               <div className="border-2 p-4 m-4 rounded-md flex justify-between bg-slate-100 dark:bg-slate-200">
-                <div className="">
-                  <h3 className="text-2xl font-bold dark:text-black">
-                    {post.title}
-                  </h3>
-                  <p className="text-slate-500 dark:text-slate-400">
-                    <em>{post.tags}</em>
+                <h3 className="text-2xl font-bold dark:text-black m-1">
+                  {post.title}
+                </h3>
+
+                {/* <div className="flex justify-between">
+                  <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
+                    {post.reading_time_minutes} minute read
                   </p>
-                  <div className="flex justify-between">
-                    <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
-                      {post.reading_time_minutes} minute read
-                    </p>
-                    <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
-                      {dayjs(post.published_at).format("MM/DD/YYYY")}
-                    </p>
-                  </div>
-                </div>
-                <Link href={`/Blog/` + post.id} className="flex items-center">
-                  <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-2 m-6 rounded-md h-10">
+
+                  <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
+                    {dayjs(post.published_at).format("MM/DD/YYYY")}
+                  </p>
+                </div> */}
+
+                <Link href={`/Blog/` + post.id} className="">
+                  <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 m-2 p-2 rounded-md h-10">
                     Read Article
                   </a>
                 </Link>
