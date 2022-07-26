@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ThemeSwitch from "../components/ThemeSwitch";
+// import ThemeSwitch from "../components/ThemeSwitch";
 
 const Navigation = () => {
   return (
@@ -45,7 +45,7 @@ const Navigation = () => {
               Contact
             </a>
           </Link>
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </div>
       </div>
     </div>

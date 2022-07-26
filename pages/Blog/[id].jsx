@@ -2,15 +2,7 @@ import Head from "next/head";
 import dayjs from "dayjs";
 import ReactMarkdown from "react-markdown";
 import "github-markdown-css";
-
-const Title = ({ children, ...props }) => <div {...props}>{children}</div>;
-const Subtitle = ({ children, ...props }) => <div {...props}>{children}</div>;
-const Paragraph = ({ children, ...props }) => <div {...props}>{children}</div>;
-
-const CodeBlock = ({ children, ...props }) => <div {...props}>{children}</div>;
-
-const Code = ({ children, ...props }) => <div {...props}>{children}</div>;
-const Link = ({ children, ...props }) => <div {...props}>{children}</div>;
+import styles from "./styles/Markdown.module.css";
 
 const Post = ({ post }) => {
   return (
@@ -34,7 +26,7 @@ const Post = ({ post }) => {
               {dayjs(post.published_at).format("MM/DD/YYYY")}
             </p>
           </div>
-          <div className="markdown-body">
+          <div className={styles.light}>
             <ReactMarkdown>{post.body_markdown}</ReactMarkdown>
           </div>
         </div>

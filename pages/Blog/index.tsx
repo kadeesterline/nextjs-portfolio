@@ -51,8 +51,8 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </p>
                   </div>
                 </div>
-                <Link href={`/Blog/` + post.id} className="">
-                  <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md">
+                <Link href={`/Blog/` + post.id} className="flex items-center">
+                  <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-2 m-6 rounded-md h-10">
                     Read Article
                   </a>
                 </Link>
