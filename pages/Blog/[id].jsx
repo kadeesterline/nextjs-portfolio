@@ -26,9 +26,12 @@ const Post = ({ post }) => {
               {dayjs(post.published_at).format("MM/DD/YYYY")}
             </p>
           </div>
-          <div className={styles.light}>
-            <ReactMarkdown>{post.body_markdown}</ReactMarkdown>
+          <div className="p-3">
+            <div className={styles.light}>
+              <ReactMarkdown>{post.body_markdown}</ReactMarkdown>
+            </div>
           </div>
+
           <p className="pt-4 mt-4">
             If you have any questions please leave a comment over on{" "}
             <a
