@@ -21,7 +21,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <main className="max-w-4xl grid mt-16 antialiased">
+      <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
           <h2 className="text-4xl font-bold pb-4"> Blog </h2>
           {posts.map(

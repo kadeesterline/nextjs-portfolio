@@ -24,7 +24,7 @@ const Projects = ({
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <main className="max-w-4xl grid mt-16 antialiased">
+      <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
           <h2 className="text-4xl font-bold"> Resume </h2>
           <p className="p-2 m-2">
