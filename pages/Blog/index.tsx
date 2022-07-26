@@ -1,8 +1,10 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import dayjs from "dayjs";
 
 type Post = {
+  id: number;
   title: string;
   url: string;
   conver_image: string;
@@ -24,6 +26,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
           <h2 className="text-4xl font-bold pb-4"> Blog </h2>
           {posts.map(
             (post: {
+              id: number;
               title: string;
               url: string;
               cover_image: string;
@@ -39,7 +42,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                   <p className="text-slate-500 dark:text-slate-400">
                     <em>{post.tags}</em>
                   </p>
-                  <div className="flex justify-betwen">
+                  <div className="flex justify-between">
                     <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
                       {post.reading_time_minutes} minute read
                     </p>
@@ -48,16 +51,11 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <a
-                    className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-1 rounded-md"
-                    href={post.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <Link href={`/Blog/` + post.id} className="flex items-center">
+                  <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 p-2 m-6 rounded-md h-10">
                     Read Article
                   </a>
-                </div>
+                </Link>
               </div>
             )
           )}

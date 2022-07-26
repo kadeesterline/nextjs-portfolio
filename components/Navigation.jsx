@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ThemeSwitch from "../components/ThemeSwitch";
+// import ThemeSwitch from "../components/ThemeSwitch";
 
 const Navigation = () => {
   return (
@@ -26,7 +26,7 @@ const Navigation = () => {
             </a>
           </Link>
 
-          <Link href="/Blog">
+          <Link href="/Blog/">
             <a
               className={
                 "text-xs tracking-wider transition-colors text-gray-900 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-md uppercase dark:text-white p-2"
@@ -45,7 +45,7 @@ const Navigation = () => {
               Contact
             </a>
           </Link>
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </div>
       </div>
     </div>
