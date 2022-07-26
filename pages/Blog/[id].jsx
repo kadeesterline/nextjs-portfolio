@@ -29,6 +29,17 @@ const Post = ({ post }) => {
           <div className={styles.light}>
             <ReactMarkdown>{post.body_markdown}</ReactMarkdown>
           </div>
+          <p className="pt-4 mt-4">
+            If you have any questions please leave a comment over on{" "}
+            <a
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-600"
+            >
+              dev.to
+            </a>
+          </p>
         </div>
       </main>
     </div>
