@@ -43,29 +43,29 @@ const About = () => {
           />
           <div className="flex lg:mg-12 lg:px-4 justify-between  ">
             <a
-              className="p-2 text-xl font-bold"
+              className="pt-2 mt-2 text-xl font-bold"
               href="https://www.linkedin.com/in/kade-esterline/"
             >
               <FaLinkedin />
             </a>
             <a
-              className="p-2 text-xl font-bold"
+              className="pt-2 mt-2 text-xl font-bold"
               href="https://github.com/kadeesterline"
             >
               <VscGithub />
             </a>
             <a
-              className="p-2 text-xl font-bold"
+              className="pt-2 mt-2 text-xl font-bold"
               href="https://dev.to/kadeesterline"
             >
               <FaDev />
             </a>
-            <a
-              className="p-2 text-xl font-bold"
+            {/* <a
+              className="pt-2 mt-2 text-xl font-bold"
               href="https://www.tiktok.com/@kadecodes"
             >
               <FaTiktok />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
