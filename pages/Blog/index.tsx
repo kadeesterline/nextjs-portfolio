@@ -23,7 +23,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
-          <h2 className="text-4xl font-bold pb-4"> Blog </h2>
+          <h2 className="text-4xl font-bold pb-4 border-b-2 "> Blog </h2>
           {posts.map(
             (post: {
               id: number;
@@ -34,8 +34,8 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
               reading_time_minutes: number;
               published_at: string;
             }) => (
-              <div className="border-2 p-4 m-4 rounded-md flex justify-between bg-slate-100 dark:bg-slate-200">
-                <h3 className="text-2xl font-bold dark:text-black m-1">
+              <div className="border-2 p-4 m-4 rounded-md flex justify-between hover:bg-slate-100 dark:bg-slate-200">
+                <h3 className="text-2xl font-bold dark:text-black m-2 p-2">
                   {post.title}
                 </h3>
 
