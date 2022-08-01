@@ -71,7 +71,7 @@ const Projects = ({
                     <FiLink />
                   </a>
                 ) : null}
-                {/* {project.demo ? (
+                {project.demo ? (
                   <a
                     className="p-1 m-1 text-slate-500 dark:text-slate-700"
                     href={project.demo}
@@ -80,7 +80,7 @@ const Projects = ({
                   >
                     <FaYoutube />
                   </a>
-                ) : null} */}
+                ) : null}
               </div>
               <p className="text-lg text-slate-500 dark:text-slate-600">
                 <em>{project.description}</em>
@@ -132,7 +132,7 @@ export const getStaticProps = async () => {
         "Hard Park is a social media platform built with a focus on cars.",
       github: "https://github.com/kadeesterline/hard-park-front-end",
       // deployed: "",
-      // demo: "",
+      demo: "https://youtu.be/srQ6e-Yz7tY",
       stack: ["React", "Bootstrap", "Sinatra", "ActiveRecord", "SQLite"],
       images: [
         "/project-images/hardpark-photos/home-page.png",
@@ -145,7 +145,7 @@ export const getStaticProps = async () => {
       description: "KanBan is a project management tool similar to trello.",
       github: "https://github.com/kadeesterline/kanban-project",
       deployed: "https://kanbanflatiron.herokuapp.com/",
-      // demo: "",
+      demo: "https://youtu.be/gBGESedbZBw",
       stack: ["React", "Tailwind", "Ruby on Rails", "PostgreSQL"],
       images: [
         "/project-images/kanban-photos/board-view.png",
