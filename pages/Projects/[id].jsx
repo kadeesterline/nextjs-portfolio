@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 import Iframe from "react-iframe";
+import { Carousel } from "react-responsive-carousel";
 
 const Project = ({ project }) => {
   console.log("PROJECT : ", project.demo);
@@ -59,7 +60,6 @@ const Project = ({ project }) => {
           {project.demo ? (
             <div>
               <h2 className="text-2xl font-bold p-2 m-2">Video Demo</h2>
-              {/* <ReactPlayer url={project.demo} /> */}
               <Iframe
                 url={project.demo}
                 position="relative"
@@ -81,11 +81,24 @@ const Project = ({ project }) => {
               <h2 className="text-2xl font-bold p-2 m-2">
                 Images and Diagrams
               </h2>
-              <div className="flex justify-evenly p-3">
+              <Carousel
+                className="m-2 p-2 border-2 rounded-md"
+                centerMode={true}
+                centerSlidePercentage={50}
+                infiniteLoop={true}
+                showThumbs={false}
+              >
+                {project.images.map((image) => (
+                  <div className="">
+                    <Image src={image} width="325" height="200" />
+                  </div>
+                ))}
+              </Carousel>
+              {/* <div className="flex justify-evenly p-3">
                 {project.images.map((image) => (
                   <Image src={image} width="325" height="200" />
                 ))}
-              </div>
+              </div> */}
             </div>
           ) : null}
         </div>
@@ -134,6 +147,11 @@ const findProject = async (id) => {
       images: [
         "/project-images/harmony-photos/home-screen.png",
         "/project-images/harmony-photos/room-view.png",
+        "/project-images/harmony-photos/wireframe1.png",
+        "/project-images/harmony-photos/wireframe2.png",
+        "/project-images/harmony-photos/wireframe3.png",
+        "/project-images/harmony-photos/frontend-flow.png",
+        "/project-images/harmony-photos/erd.png",
       ],
     },
     {
@@ -150,6 +168,8 @@ const findProject = async (id) => {
       images: [
         "/project-images/hardpark-photos/home-page.png",
         "/project-images/hardpark-photos/the-lot.png",
+        "/project-images/hardpark-photos/frontend-flow.png",
+        "/project-images/hardpark-photos/ERD.png",
       ],
     },
     {
@@ -165,6 +185,10 @@ const findProject = async (id) => {
       images: [
         "/project-images/kanban-photos/board-view.png",
         "/project-images/kanban-photos/home-view.png",
+        "/project-images/kanban-photos/edit-view.png",
+        "/project-images/kanban-photos/wireframe1.png",
+        "/project-images/kanban-photos/wireframe2.png",
+        "/project-images/kanban-photos/erd.png",
       ],
     },
   ];
