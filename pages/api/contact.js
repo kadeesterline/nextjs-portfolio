@@ -25,11 +25,14 @@ export default function handler(req, res) {
       from: "kadeportfolio1@gmail.com",
       to: `kadeesterline@gmail.com`,
       subject: `Message from ${body.firstName} ${body.lastName}`,
-      text: `Return address: ${body.email} 
-      Message: ${body.message}`,
+      text: `
+      Return address: ${body.email} 
+      From: ${body.firstName} ${body.lastName}
+      Message: ${body.message}
+      `,
       // text: `${req.body.message}`
     });
-    console.log(JSON.stringify(result, null, 4));
+    // console.log(JSON.stringify(result, null, 4));
   }
 
   res.status(200);
