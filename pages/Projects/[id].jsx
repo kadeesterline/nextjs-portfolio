@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 import Iframe from "react-iframe";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 const Project = ({ project }) => {
@@ -82,16 +83,14 @@ const Project = ({ project }) => {
                 Images and Diagrams
               </h2>
               <Carousel
-                className="m-2 p-2 border-2 rounded-md"
+                className="m-2 p-2 "
                 centerMode={true}
                 centerSlidePercentage={50}
                 infiniteLoop={true}
                 showThumbs={false}
               >
                 {project.images.map((image) => (
-                  <div className="">
-                    <Image src={image} width="325" height="200" />
-                  </div>
+                  <Image src={image} width="325" height="200" />
                 ))}
               </Carousel>
               {/* <div className="flex justify-evenly p-3">
