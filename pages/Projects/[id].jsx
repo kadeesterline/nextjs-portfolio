@@ -15,43 +15,46 @@ const Project = ({ project }) => {
       </Head>
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
-          <div className="flex justify-between">
-            <h1 className="text-4xl font-bold pb-4">{project.name}</h1>
-            <Link href={"/Projects"}>
-              <a className="font-bold text-slate-500 hover:bg-slate-200  m-2 p-2 rounded-md h-10">
-                Back to Projects
-              </a>
-            </Link>
-          </div>
-
-          <div className="flex justify-between">
-            <div className="flex p-2 pb-0 m-2 mb-0 text-slate-500">
-              {project.stack.map((el) => (
-                <div className="p-1 m-1">{el}</div>
-              ))}
-            </div>
-            <div className="flex p-2 pb-0 m-2 mb-0">
-              <Link href={project.github}>
-                <a className=" m-1 p-1">
-                  <FaGithub />
+          <div className="border-b-2">
+            <div className="flex justify-between">
+              <h1 className="text-4xl font-bold pb-4">{project.name}</h1>
+              <Link href={"/Projects"}>
+                <a className="font-bold text-slate-500 hover:bg-slate-200  m-2 p-2 rounded-md h-10">
+                  Back to Projects
                 </a>
               </Link>
-              {project.deployed ? (
-                <Link href={project.deployed}>
-                  <a className="m-1 p-1">
-                    <FiLink />
-                  </a>
-                </Link>
-              ) : null}
-              {project.demo ? (
-                <Link href={project.demo}>
+            </div>
+
+            <div className="flex justify-between">
+              <div className="flex p-2 pb-0 m-2 mb-0 text-slate-500">
+                {project.stack.map((el) => (
+                  <div className="p-1 m-1">{el}</div>
+                ))}
+              </div>
+              <div className="flex p-2 pb-0 m-2 mb-0">
+                <Link href={project.github}>
                   <a className=" m-1 p-1">
-                    <FaYoutube />
+                    <FaGithub />
                   </a>
                 </Link>
-              ) : null}
+                {project.deployed ? (
+                  <Link href={project.deployed}>
+                    <a className="m-1 p-1">
+                      <FiLink />
+                    </a>
+                  </Link>
+                ) : null}
+                {project.demo ? (
+                  <Link href={project.demo}>
+                    <a className=" m-1 p-1">
+                      <FaYoutube />
+                    </a>
+                  </Link>
+                ) : null}
+              </div>
             </div>
           </div>
+
           {/* NEEDS TO BE STYLED STILL */}
           {project.demo ? (
             <div>
