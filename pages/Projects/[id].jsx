@@ -1,12 +1,13 @@
-import { data } from "autoprefixer";
+// import { data } from "autoprefixer";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
-import ReactPlayer from "react-player";
+import Iframe from "react-iframe";
 
 const Project = ({ project }) => {
-  console.log("PROJECT : ", project);
+  console.log("PROJECT : ", project.demo);
   return (
     <div>
       <Head>
@@ -55,24 +56,38 @@ const Project = ({ project }) => {
             </div>
           </div>
 
-          {/* NEEDS TO BE STYLED STILL */}
           {project.demo ? (
             <div>
               <h2 className="text-2xl font-bold p-2 m-2">Video Demo</h2>
-              <div className="h-96">
-                <ReactPlayer url={project.demo} width="100%" height="100%" />
-              </div>
+              {/* <ReactPlayer url={project.demo} /> */}
+              <Iframe
+                url={project.demo}
+                position="relative"
+                className="h-96 w-full"
+              />
             </div>
           ) : null}
 
-          <div>
-            {/* Project description(long) */}
-            <h2 className="text-2xl font-bold p-2 m-2">Description</h2>
-          </div>
-          <div>
-            {/* Project images / diagrams */}
-            <h2 className="text-2xl font-bold p-2 m-2">Images and Diagrams</h2>
-          </div>
+          {project.longDescription ? (
+            <div>
+              <h2 className="text-2xl font-bold p-2 m-2">Description</h2>
+
+              <p>{project.longDescription}</p>
+            </div>
+          ) : null}
+
+          {project.images ? (
+            <div>
+              <h2 className="text-2xl font-bold p-2 m-2">
+                Images and Diagrams
+              </h2>
+              <div className="flex justify-evenly p-3">
+                {project.images.map((image) => (
+                  <Image src={image} width="325" height="200" />
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
       </main>
     </div>
@@ -110,6 +125,8 @@ const findProject = async (id) => {
       name: "Harmony",
       description:
         "Harmony is a messaging and collaboration tool similar to discord or slack.",
+      longDescription:
+        "Harmony is a messaging and collaboration tool similar to discord or slack. It was built using React, Tailwind, Ruby on Rails and Postgres. Users are able to join, create and invite others to join their room. Users can then send messages inside of a rooms channels. Text can be formatted using TipTapjs, gifs can be sent using the Giphy API and image/file upload and storage is being done with ActiveStorage and AWS S3. There are two different user groups for every board, normal users and moderators. Moderators are able to delete anyones messages while users are able to edit and delete their own messages. There is full CRUD on Rooms, Channels, Posts, and Replies.",
       github: "https://github.com/kadeesterline/harmony",
       deployed: "",
       demo: "",
@@ -124,9 +141,11 @@ const findProject = async (id) => {
       name: "Hard Park",
       description:
         "Hard Park is a social media platform built with a focus on cars.",
+      longDescription:
+        "Hard Park is a social media platform built with a focus on cars. It was built using React, Bootstrap, Sinatra, ActiveRecord and SQLite. Users are able to post their car with a brief description as well as like and leave comments on posts. Users can also filter through the cars in order to see specific categories of cars.",
       github: "https://github.com/kadeesterline/hard-park-front-end",
       deployed: "",
-      demo: "https://youtu.be/srQ6e-Yz7tY",
+      demo: "https://youtube.com/embed/srQ6e-Yz7tY",
       stack: ["React", "Bootstrap", "Sinatra", "ActiveRecord", "SQLite"],
       images: [
         "/project-images/hardpark-photos/home-page.png",
@@ -137,9 +156,11 @@ const findProject = async (id) => {
       index: 30,
       name: "KanBan",
       description: "KanBan is a project management tool similar to trello.",
+      longDescription:
+        "KanBan is a project management tool similar to trello. It was built using React, Tailwind, Ruby on Rails and Postgres. It's being hosted on Heroku, you can visit the hosted site by clicking the link icon up above. Users are able to join and create project boards that have different lists for tasks. Lists represent a different stage in a tasks lifecycle, for example 'to do' or 'in progress'. Users can drag and drop task items between lists using Atlassians Drag and Drop library. All four CRUD actions can be performed on boards, lists and tasks.",
       github: "https://github.com/kadeesterline/kanban-project",
       deployed: "https://kanbanflatiron.herokuapp.com/",
-      demo: "https://youtu.be/gBGESedbZBw",
+      demo: "https://youtube.com/embed/gBGESedbZBw",
       stack: ["React", "Tailwind", "Ruby on Rails", "PostgreSQL"],
       images: [
         "/project-images/kanban-photos/board-view.png",
@@ -151,9 +172,7 @@ const findProject = async (id) => {
   // const dataJSON = JSON.stringify(data);
 
   for (let i = 0; i < data.length; i++) {
-    console.log("TARGET:", data[i].index);
     if (data[i].index == id) {
-      console.log;
       return data[i];
     } else {
       console.log(
