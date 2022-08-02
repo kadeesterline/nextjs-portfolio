@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 import Iframe from "react-iframe";
@@ -9,7 +10,20 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 const Project = ({ project }) => {
-  console.log("PROJECT : ", project.demo);
+  const [showImage, setShowImage] = useState(false);
+  const [image, setImage] = useState("");
+
+  function handleImgClick(index, item) {
+    console.log(item.props.src);
+    setImage(item.props.src);
+    setShowImage(true);
+  }
+
+  function hideImg() {
+    setShowImage(false);
+    setImage("");
+  }
+
   return (
     <div>
       <Head>
@@ -88,19 +102,33 @@ const Project = ({ project }) => {
                 centerSlidePercentage={50}
                 infiniteLoop={true}
                 showThumbs={false}
+                onClickItem={handleImgClick}
               >
                 {project.images.map((image) => (
                   <Image src={image} width="325" height="200" />
                 ))}
               </Carousel>
-              {/* <div className="flex justify-evenly p-3">
-                {project.images.map((image) => (
-                  <Image src={image} width="325" height="200" />
-                ))}
-              </div> */}
+              <p className="text-slate-500">
+                <em>click an image to expand it</em>
+              </p>
             </div>
           ) : null}
         </div>
+        {showImage ? (
+          <div>
+            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="relative w-auto my-6 mx-auto max-w-3xl p-8 m-2 bg-slate-600 rounded-md">
+                <button
+                  className=" text-slate-200 absolute top-3 right-4"
+                  onClick={hideImg}
+                >
+                  X
+                </button>
+                <Image src={image} width="750" height="450" />
+              </div>
+            </div>
+          </div>
+        ) : null}
       </main>
     </div>
   );
