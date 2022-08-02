@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { FaGithub, FaYoutube } from "react-icons/fa";
-import { FiLink } from "react-icons/fi";
+import { FiLink, FiArrowLeft } from "react-icons/fi";
 import Iframe from "react-iframe";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -33,13 +33,14 @@ const Project = ({ project }) => {
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
           <div className="border-b-2">
-            <div className="grid grid-cols-3">
-              <h1 className="text-4xl font-bold pb-4 col-span-2">
+            <div className="grid grid-cols-5">
+              <h1 className="text-4xl font-bold pb-4 col-span-4">
                 {project.name}
               </h1>
               <Link href={"/Projects"}>
-                <a className="font-bold text-slate-500 hover:bg-slate-200  m-2 p-2 rounded-md h-10">
-                  Back to Projects
+                <a className="font-bold text-slate-500 hover:bg-slate-200  m-2 p-2 rounded-md h-10 flex justify-center col-span-1">
+                  <FiArrowLeft className="m-1" />
+                  Back
                 </a>
               </Link>
             </div>
