@@ -88,11 +88,8 @@ const Projects = ({
               <p className="text-lg text-slate-500 dark:text-slate-600">
                 <em>{project.description}</em>
               </p>
-              <p className="text-lg text-slate-500 dark:text-slate-600">
-                {" "}
-                Tech Stack:{" "}
-              </p>
-              <ul className="grid border-b-2">
+
+              <ul className="flex-wrap flex border-b-2">
                 {project.stack.map((item) => (
                   <li className="p-2 text-slate-500 dark:text-slate-400">
                     -{item}

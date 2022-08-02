@@ -33,8 +33,10 @@ const Project = ({ project }) => {
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
           <div className="border-b-2">
-            <div className="flex justify-between">
-              <h1 className="text-4xl font-bold pb-4">{project.name}</h1>
+            <div className="grid grid-cols-3">
+              <h1 className="text-4xl font-bold pb-4 col-span-2">
+                {project.name}
+              </h1>
               <Link href={"/Projects"}>
                 <a className="font-bold text-slate-500 hover:bg-slate-200  m-2 p-2 rounded-md h-10">
                   Back to Projects
@@ -43,12 +45,13 @@ const Project = ({ project }) => {
             </div>
 
             <div className="flex justify-between">
-              <div className="flex p-2 pb-0 m-2 mb-0 text-slate-500">
+              <div className="flex flex-wrap p-2 pb-0 m-2 mb-0 text-slate-500 col-span-2">
                 {project.stack.map((el) => (
                   <div className="p-1 m-1">{el}</div>
                 ))}
               </div>
-              <div className="flex p-2 pb-0 m-2 mb-0">
+
+              <div className="flex p-2 pb-0 m-2 mb-0 ">
                 <Link href={project.github}>
                   <a className=" m-1 p-1">
                     <FaGithub />
@@ -72,6 +75,14 @@ const Project = ({ project }) => {
             </div>
           </div>
 
+          {project.longDescription ? (
+            <div>
+              <h2 className="text-2xl font-bold p-2 m-2">Description</h2>
+
+              <p>{project.longDescription}</p>
+            </div>
+          ) : null}
+
           {project.demo ? (
             <div>
               <h2 className="text-2xl font-bold p-2 m-2">Video Demo</h2>
@@ -80,14 +91,6 @@ const Project = ({ project }) => {
                 position="relative"
                 className="h-96 w-full"
               />
-            </div>
-          ) : null}
-
-          {project.longDescription ? (
-            <div>
-              <h2 className="text-2xl font-bold p-2 m-2">Description</h2>
-
-              <p>{project.longDescription}</p>
             </div>
           ) : null}
 
