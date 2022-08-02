@@ -1,18 +1,10 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import SkillCarousel from "../components/SkillCarousel";
+import Link from "next/link";
+import SkillCarousel from "../../components/SkillCarousel.jsx";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
-
-// type Project = {
-//   name: string;
-//   github: string;
-//   demo: string;
-//   deployed: string;
-//   description: string;
-//   images: Array<string>;
-// };
 
 const Projects = ({
   projects,
@@ -49,9 +41,19 @@ const Projects = ({
           <h2 className="text-4xl font-bold pb-4"> Projects </h2>
           {projects.map((project) => (
             <div className="border-2 p-4 m-4 rounded-md bg-slate-100 dark:bg-slate-200">
-              <h3 className="text-2xl font-bold dark:text-black">
-                {project.name}
-              </h3>
+              <div className="flex justify-between">
+                <h3 className="text-2xl font-bold dark:text-black">
+                  {project.name}
+                </h3>
+                <div className="p-1 m-1">
+                  <Link href={`/Projects/` + project.index}>
+                    <a className="text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:text-slate-200 dark:hover:bg-slate-600 m-2 p-2 rounded-md h-10">
+                      See More
+                    </a>
+                  </Link>
+                </div>
+              </div>
+
               <div className="flex">
                 <a
                   className="p-1 m-1 text-slate-500 dark:text-slate-700"
@@ -82,6 +84,7 @@ const Projects = ({
                   </a>
                 ) : null} */}
               </div>
+
               <p className="text-lg text-slate-500 dark:text-slate-600">
                 <em>{project.description}</em>
               </p>
@@ -109,10 +112,12 @@ const Projects = ({
   );
 };
 
+export default Projects;
+
 export const getStaticProps = async () => {
   const data = [
     {
-      id: 1,
+      index: 10,
       name: "Harmony",
       description:
         "Harmony is a messaging and collaboration tool similar to discord or slack.",
@@ -126,7 +131,7 @@ export const getStaticProps = async () => {
       ],
     },
     {
-      id: 2,
+      index: 20,
       name: "Hard Park",
       description:
         "Hard Park is a social media platform built with a focus on cars.",
@@ -140,7 +145,7 @@ export const getStaticProps = async () => {
       ],
     },
     {
-      id: 3,
+      index: 30,
       name: "KanBan",
       description: "KanBan is a project management tool similar to trello.",
       github: "https://github.com/kadeesterline/kanban-project",
@@ -162,5 +167,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-export default Projects;
