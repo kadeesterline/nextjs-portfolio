@@ -15,7 +15,7 @@ const Post = ({ post }) => {
         <div className="m-5 p-5">
           <h1 className="text-4xl font-bold pb-4">{post.title}</h1>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between mb-3 pb-1">
             <p className="p-2 pb-0 m-2 mb-0 text-slate-500 dark:text-slate-400">
               <em>{post.tag_list}</em>
             </p>

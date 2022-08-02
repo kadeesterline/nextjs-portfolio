@@ -18,7 +18,7 @@ const Projects = ({
 
       <main className="max-w-4xl mx-auto mt-16 antialiased">
         <div className="m-5 p-5">
-          <h2 className="text-4xl font-bold pb-4"> Resume </h2>
+          <h2 className="text-4xl border-b-2 font-bold pb-4"> Resume </h2>
           <p className="p-2 m-2">
             You can find my full resume{" "}
             <a
@@ -33,12 +33,12 @@ const Projects = ({
         </div>
 
         <div className="m-5 p-5">
-          <h2 className="text-4xl font-bold"> Skills </h2>
+          <h2 className="text-4xl font-bold border-b-2 pb-4"> Skills </h2>
           <SkillCarousel />
         </div>
 
         <div className="m-5 p-5">
-          <h2 className="text-4xl font-bold pb-4"> Projects </h2>
+          <h2 className="text-4xl border-b-2 font-bold pb-4"> Projects </h2>
           {projects.map((project) => (
             <div className="border-2 p-4 m-4 rounded-md bg-slate-100 dark:bg-slate-200">
               <div className="flex justify-between">

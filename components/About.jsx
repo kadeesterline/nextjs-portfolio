@@ -14,21 +14,44 @@ const About = () => {
           </h1>
           <div className="mt-6 text-gray-800 dark:text-white">
             <p className="mb-4">
-              If you had asked me a few years ago if I thought I'd be a software
-              engineer some day I would have looked at you like you were crazy.
-              While I was fixing computers and knew that I absolutely loved
-              everything that had to do with them, I didn't see my self as
-              someone who could learn the skills it takes to be a software
-              engineer. I proved my self wrong within the first week of my
-              bootcamp experience. Not only did I enjoy working with code, I
-              understood it quickly. Now, I'm excited to continue solving
-              problems with software and I look forward to learning new skills.
-              My current technical skills include JavaScript, HTML/CSS, React,
-              Ruby, Sinatra, Ruby on Rails, PostgreSQL, TailwindCSS,
-              BootstrapCSS and Git. In my free time I'm a huge basketball fan
-              (Go Blazers!) and spend a lot of time on the weekends at car
-              meets, shows and cruises.
+              Welcome to my portfolio, where you'll find all of my projects and
+              blog posts. If you have any questions or just want to chat, you
+              can find me on
+              <a
+                className="text-blue-600 hover:text-blue-800"
+                href="https://www.linkedin.com/in/kade-esterline/"
+              >
+                {" "}
+                LinkedIn{" "}
+              </a>
+              or, you can use the contact form right here on my portfolio.
             </p>
+            <div className="flex lg:mg-12 lg:px-4 justify-evenly">
+              <a
+                className="mt-6  text-5xl font-bold"
+                href="https://www.linkedin.com/in/kade-esterline/"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                className="mt-6 text-5xl font-bold"
+                href="https://github.com/kadeesterline"
+              >
+                <VscGithub />
+              </a>
+              <a
+                className="mt-6 text-5xl font-bold"
+                href="https://dev.to/kadeesterline"
+              >
+                <FaDev />
+              </a>
+              {/* <a
+                className="mt-6 text-5xl font-bold"
+                href="https://www.tiktok.com/@kadecodes"
+              >
+                <FaTiktok />
+              </a> */}
+            </div>
           </div>
         </div>
         <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10 mt-6">
@@ -41,32 +64,6 @@ const About = () => {
             height={250}
             placeholder="blur"
           />
-          <div className="flex lg:mg-12 lg:px-4 justify-between  ">
-            <a
-              className="pt-2 mt-2 text-xl font-bold"
-              href="https://www.linkedin.com/in/kade-esterline/"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              className="pt-2 mt-2 text-xl font-bold"
-              href="https://github.com/kadeesterline"
-            >
-              <VscGithub />
-            </a>
-            <a
-              className="pt-2 mt-2 text-xl font-bold"
-              href="https://dev.to/kadeesterline"
-            >
-              <FaDev />
-            </a>
-            {/* <a
-              className="pt-2 mt-2 text-xl font-bold"
-              href="https://www.tiktok.com/@kadecodes"
-            >
-              <FaTiktok />
-            </a> */}
-          </div>
         </div>
       </div>
     </div>
