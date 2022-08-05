@@ -65,7 +65,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export default Blog;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch("https://dev.to/api/articles?username=kadeesterline");
   const posts = await res.json();
 
