@@ -40,7 +40,7 @@ const Projects = ({
         <div className="m-5 p-5">
           <h2 className="text-4xl border-b-2 font-bold pb-4"> Projects </h2>
           {projects.map((project) => (
-            <div className="border-2 p-4 m-4 rounded-md bg-slate-100 dark:bg-slate-200">
+            <div className="border-2 p-4 m-4 rounded-md  dark:bg-slate-200">
               <div className="flex justify-between">
                 <h3 className="text-2xl font-bold dark:text-black">
                   {project.name}
