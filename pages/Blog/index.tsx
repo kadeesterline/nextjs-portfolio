@@ -1,4 +1,4 @@
-import type { InferGetStaticPropsType } from "next";
+import type { InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import dayjs from "dayjs";
@@ -13,7 +13,9 @@ type Post = {
   published_at: string;
 };
 
-const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Blog = ({
+  posts,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <div className="space-y-14 lg:space-y-24">
       <Head>
@@ -65,7 +67,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export default Blog;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch("https://dev.to/api/articles?username=kadeesterline");
   const posts = await res.json();
 

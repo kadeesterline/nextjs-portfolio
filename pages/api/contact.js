@@ -17,10 +17,10 @@ export default function handler(req, res) {
   send();
 
   async function send() {
-    console.log("whole req", body);
-    console.log("firstName", body.firstName);
-    console.log("lastName", body.lastName);
-    console.log("text", body.message);
+    // console.log("whole req", body);
+    // console.log("firstName", body.firstName);
+    // console.log("lastName", body.lastName);
+    // console.log("text", body.message);
 
     const result = await transporter.sendMail({
       from: "kadeportfolio1@gmail.com",
