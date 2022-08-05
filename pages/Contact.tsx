@@ -17,17 +17,15 @@ const Contact: NextPage = () => {
       email: email,
       message: `${message}`,
     };
-    console.log(data);
+
     fetch("/api/contact", {
       method: "post",
       body: JSON.stringify(data),
     }).then((res) => {
-      if (res.status === 200) {
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setMessage("");
-      }
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
     });
   };
 

@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import process from "process";
 
 export default function handler(req, res) {
   const body = JSON.parse(req.body);
