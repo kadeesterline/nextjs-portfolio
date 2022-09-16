@@ -78,7 +78,6 @@ const About = () => {
               <li className="p-2 m-1">- Git</li>
               <li className="p-2 m-1">- Linux</li>
               <li className="p-2 m-1">- SQL</li>
-              <li className="p-2 m-1">- API Development</li>
             </ul>
           </div>
           <div>
